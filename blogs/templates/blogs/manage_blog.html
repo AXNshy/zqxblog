@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Manage</title>
+</head>
+<body>
+{% extends 'blogs/base.html' %}
+{% block content %}
+    <div class="blog_list">
+        {% for blog in blogs %}
+            {{ blog.id }}
+            <p>
+            <h3>{{ blog.title }}</h3>
+            <h6>{{ blog.createTime }}</h6>
+            </p>
+            <br>
+        {% empty %}
+            <p style="color: #FFF;">还没有blog，快去写一篇吧！！！</p>
+            <a href="{% url 'addEntity' %}">写Blog</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+</body>
+</html>

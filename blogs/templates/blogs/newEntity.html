@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>写Blog</title>
+</head>
+<body>
+
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+    <form action="{% url 'newEntity' %}" method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+    <input name="submit" type="submit" value="保存">
+    </form>
+{% endblock %}
+</body>
+</html>

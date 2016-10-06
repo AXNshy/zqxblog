@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {#    html相对路径  返回上一目录../，根目录 /  ，当前目录  ./#}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+
+</head>
+<body>
+<div class="header">
+    <div>
+        <h1>zqxdreams's Blog</h1>
+    </div>
+    <div class="div_nav">
+        <nav class="blog_nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="https://github.com/AXNshy">Github</a></li>
+                <li><a href="{% url 'manageBlog' %}">Manage</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
