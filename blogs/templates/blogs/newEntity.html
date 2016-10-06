@@ -9,7 +9,7 @@
 {% extends 'blogs/base.html' %}
 
 {% block content %}
-    <form action="{% url 'newEntity' %}" method="post">
+    <form action="{% url 'blogs:newEntity' %}" method="post">
     {% csrf_token %}
         {{ form.as_p }}
     <input name="submit" type="submit" value="保存">

@@ -18,8 +18,16 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+
+
+
+    url(r'^blog/(?P<blog_id>[0-9]+)$', views.blog, name='blog'),
+
     url(r'^addEntity/$', views.addEntity, name='addEntity'),
+
     url(r'^newEntity/$', views.newEntity, name='newEntity'),
+
     url(r'^deleteBlog/$', views.deleteBlog, name='deleteBlog'),
+
     url(r'^manageBlog/$', views.manageBlog, name='manageBlog'),
 ]

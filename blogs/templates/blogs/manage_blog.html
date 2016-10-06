@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/blogs/static/css/manageBlog.css" type="text/css">
     <meta charset="UTF-8">
     <title>Blog Manage</title>
 </head>
@@ -9,16 +10,15 @@
 {% block content %}
     <div class="blog_list">
         {% for blog in blogs %}
-            {{ blog.id }}
-            <p>
-            <h3>{{ blog.title }}</h3>
-            <h6>{{ blog.createTime }}</h6>
+            <p class="blog_list_item">
+            <a href="{% url 'blogs:blog' blog.id %}">{{ blog.title }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {{ blog.createTime }}
             </p>
             <br>
         {% empty %}
             <p style="color: #FFF;">还没有blog，快去写一篇吧！！！</p>
-            <a href="{% url 'addEntity' %}">写Blog</a>
         {% endfor %}
+        <a href="{% url 'blogs:newEntity' %}">写Blog</a>
     </div>
 
 {% endblock %}
