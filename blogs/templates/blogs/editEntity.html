@@ -1,0 +1,17 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/blogForm.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'blogs:editEntity' blog.id%}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="提交">
+    </form>
+{% endblock %}

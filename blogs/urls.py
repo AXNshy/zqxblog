@@ -19,7 +19,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
 
-
+    url(r'^blog/edit/(?P<blog_id>[0-9]+)$', views.editEntity, name='editEntity'),
 
     url(r'^blog/(?P<blog_id>[0-9]+)$', views.blog, name='blog'),
 
@@ -27,7 +27,7 @@ urlpatterns = [
 
     url(r'^newEntity/$', views.newEntity, name='newEntity'),
 
-    url(r'^deleteBlog/$', views.deleteBlog, name='deleteBlog'),
+    url(r'^blog/delete/(?P<blog_id>[0-9]+)$', views.deleteBlog, name='deleteEntity'),
 
     url(r'^manageBlog/$', views.manageBlog, name='manageBlog'),
 ]

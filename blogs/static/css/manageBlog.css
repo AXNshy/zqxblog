@@ -12,3 +12,10 @@
 .blog_list p {
     color: #FFF;
 }
+
+.write_button{
+    position: fixed;
+    right: 20px;
+    top:80px;
+
+}

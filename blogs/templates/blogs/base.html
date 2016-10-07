@@ -1,17 +1,23 @@
-{% load static %}
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>{% block title %}默认标题{% endblock %}</title>
     {#    html相对路径  返回上一目录../，根目录 /  ，当前目录  ./#}
     {% block head %}
     {% endblock head %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
-
 </head>
 <body>
 <div class="header">
     <div>
         <h1>zqxdreams's Blog</h1>
+    </div>
+
+    <div style="position: absolute;right: 10px;top: 10px;">
+        <audio controls id="audio_play_music">
+            <source src="/blogs/static/music/川井憲次%20-%20TOMORROW%20~第14话エンディングテーマ~.mp3" type="audio/mpeg">
+            您的浏览器不支持 audio 元素。
+        </audio>
     </div>
     <div class="div_nav">
         <nav class="blog_nav">

@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>写Blog</title>
-</head>
-<body>
-
 {% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}
+    写Blog
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/blogForm.css' %}"/>
+{% endblock %}
+
+
 
 {% block content %}
     <form action="{% url 'blogs:newEntity' %}" method="post">
-    {% csrf_token %}
+        {% csrf_token %}
         {{ form.as_p }}
-    <input name="submit" type="submit" value="保存">
+        <input name="submit" type="submit" value="保存">
     </form>
 {% endblock %}
-</body>
-</html>

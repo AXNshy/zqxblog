@@ -1,0 +1,10 @@
+form p label{
+    color: #FFF;
+}
+form p+p {
+    position: relative;
+}
+
+form p + p label{
+    margin-bottom: 200px;
+}

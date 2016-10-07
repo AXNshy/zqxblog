@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/blogs/static/css/manageBlog.css" type="text/css">
-    <meta charset="UTF-8">
-    <title>Blog Manage</title>
-</head>
-<body>
 {% extends 'blogs/base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="/blogs/static/css/manageBlog.css" type="text/css">
+{% endblock %}
+
+{% block title %}
+    Blog Manage
+{% endblock %}
+
 {% block content %}
     <div class="blog_list">
         {% for blog in blogs %}
             <p class="blog_list_item">
-            <a href="{% url 'blogs:blog' blog.id %}">{{ blog.title }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {{ blog.createTime }}
+                <a href="{% url 'blogs:blog' blog.id %}">{{ blog.title }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {{ blog.createTime }}
+                <br><br><br>
+                <a href="{% url 'blogs:editEntity' blog.id %}">编辑</a>
+                <a href="{% url 'blogs:deleteEntity' blog.id %}">删除</a>
             </p>
             <br>
         {% empty %}
             <p style="color: #FFF;">还没有blog，快去写一篇吧！！！</p>
         {% endfor %}
-        <a href="{% url 'blogs:newEntity' %}">写Blog</a>
-    </div>
+        <div>
+            <div class="write_button">
+                <a href="{% url 'blogs:newEntity' %}">写Blog</a>
+            </div>
+        </div>
 
-{% endblock %}
-
-
-</body>
-</html>
+    </div>{% endblock %}

@@ -18,10 +18,11 @@ class Blog(models.Model):
     topic = models.ForeignKey(Topic)
     createTime = models.DateTimeField(u'发布时间', auto_now_add=True, editable=True)
     updateTime = models.DateTimeField(u'更新时间', auto_now=True, null=True)
-    content = models.TextField(u'内容')
-    title = models.TextField(u'标题', max_length=256)
+    content = models.TextField(u'内容', max_length=256)
+    title = models.TextField(u'标题',)
     def __str__(self):
         return self.title
+
 
 
 
